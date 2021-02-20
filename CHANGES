@@ -1,0 +1,18 @@
+Change Log
+==========
+
+1.0.3
+----------
+- Fixed path for JavaScript file in drag & drop method
+
+1.0.2
+----------
+- Updated wheel build specs
+
+1.0.1
+----------
+- Updated package build method
+
+1.0.0
+----------
+- Added drag & drop support
