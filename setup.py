@@ -8,7 +8,7 @@ with open("CHANGES", "r", encoding="utf-8") as ch:
 
 setuptools.setup(
     name="seletools",
-    version="1.0.3",
+    version="1.0.5",
     author="Dmitrii Bormotov",
     author_email="squier7@gmail.com",
     description="Helpful tools for Selenium on Python",

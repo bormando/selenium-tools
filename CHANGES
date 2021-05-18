@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+1.0.5
+----------
+- Re-uploaded package with both source and wheel
+
+1.0.4
+----------
+- Updated README about XPath selectors support
+
 1.0.3
 ----------
 - Fixed path for JavaScript file in drag & drop method

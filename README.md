@@ -25,5 +25,5 @@ target = driver.find_element(By.CSS_SELECTOR, "...")
 drag_and_drop(driver, source, target)
 ```
 
-### Important
-Drag & Drop action works with elements found by CSS selectors only!
+### Notes
+Drag & Drop action worked with CSS selectors only a while ago. Now it also supports XPath selectors.
