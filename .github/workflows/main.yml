@@ -10,6 +10,9 @@ jobs:
     container: circleci/python:latest-browsers
 
     steps:
+      - name: Update Git
+        run: git update
+
       - uses: actions/checkout@v2
 
       - name: Install dependencies
