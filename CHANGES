@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+1.1.0
+----------
+- Added scrolling support (now it's possible to scroll to any element on page, even if it's covered by another element)
+- Added tests for scrolling
+- Deleted comment in drag & drop function about using CSS selectors only
+
 1.0.5
 ----------
 - Re-uploaded package with both source and wheel
