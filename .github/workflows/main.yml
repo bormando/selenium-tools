@@ -10,8 +10,8 @@ jobs:
     container: circleci/python:latest-browsers
 
     steps:
-      - name: Update Git
-        run: sudo apt-get install git
+      - name: Provide access to working directory
+        run: sudo chown -R $USER:$USER /home/github/actions-runner/_work/selenium-tools
 
       - uses: actions/checkout@v2
 
