@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Update Git
-        run: git update
+        run: apt-get install git
 
       - uses: actions/checkout@v2
 
