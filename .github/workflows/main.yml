@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Provide access to working directory
-        run: sudo chown -R $USER:$USER /home/github/actions-runner/_work/selenium-tools
+        run: sudo chown -R $USER:$USER $GITHUB_WORKSPACE
 
       - uses: actions/checkout@v2
 
