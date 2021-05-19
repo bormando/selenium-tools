@@ -5,9 +5,21 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  configure:
     runs-on: ubuntu-latest
-    container: circleci/python:latest-browsers
+    outputs:
+      containerUser: ${{ steps.get-user.outputs.containerUser }}
+    
+    steps:
+      - id: get-user
+        run: echo "::set-output name=containerUser::`id -u`:`id -g`"
+
+  test:
+    needs: configure
+    runs-on: ubuntu-latest
+    container:
+      image: circleci/python:latest-browsers
+      options: --user ${{ needs.configure.outputs.containerUser }}
 
     steps:
       - name: Provide access to working directory
