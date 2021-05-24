@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+1.2.0
+----------
+- Added IndexedDB interaction support (get/put/add methods)
+- Added tests for IndexedDB
+- Added log interceptor for tests
+- Added webdriver waits getter
+- Added pytest marks for tests
+
 1.1.0
 ----------
 - Added scrolling support (now it's possible to scroll to any element on page, even if it's covered by another element)
