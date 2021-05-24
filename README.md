@@ -43,5 +43,46 @@ scroll_to_bottom(driver, element1, element2)
 scroll_to_bottom(driver, element1)
 ```
 
+### Getting webdriver's wait values
+Selenium 4 in it's alpha versions already supports that feature, but stable (latest non-alpha version 3+) doesn't.
+```
+# get implicit wait value only
+from seletools.waits import get_implicit_wait
+
+implicit_wait = get_implicit_wait(driver)
+
+# OR get all waits (non only implicit one)
+from seletools.waits import Wait
+
+waits = Waits(driver)
+implicit_wait = waits.implicit
+page_load = waits.page_load 
+scripts = waits.scripts
+```
+
+### Interaction with IndexedDB
+It's possible to interact with IndexedDB database in browser via JavaScript. This interface helps get/update/insert data in existing databases and tables.
+
+__Important: it's necessary to have logging enabled for your webdriver instance, since there's no other way for Selenium to get data from IndexedDB than gather it from the console. Here's how you can enable logging in your webdriver:__
+```
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
+dc["goog:loggingPrefs"] = {"browser": "ALL"}
+driver = webdriver.Chrome(desired_capabilities=dc)
+```
+
+Example:
+```
+from seletools.indexeddb import IndexedDB
+
+idb = IndexedDB(driver, "mydb", 3)  # webdriver instance, db name, db version
+# GET value
+value = idb.get_value("keyvaluepairs", "foo")  # table name, key in table
+# PUT value (change existing)
+idb.put_value("keyvaluepairs", "foo", "win")  # table name, key, new value
+# ADD value
+idb.add_value("keyvaluepairs", "war", "pain")  # table name, new key, new value
+```
+
 ### Notes
 Drag & Drop action worked with CSS selectors only a while ago. Now it also supports XPath selectors.

@@ -4,6 +4,7 @@ from selenium.common.exceptions import WebDriverException
 from seletools.actions import scroll_to_top, scroll_to_bottom
 
 
+@pytest.mark.scroll
 class TestScroll:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, driver):
