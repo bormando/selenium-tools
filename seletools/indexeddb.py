@@ -29,6 +29,8 @@ class IndexedDB:
             log_id
         )
         implicit_wait = get_implicit_wait(self.driver)
+        if not implicit_wait:
+            implicit_wait = 1
         for i in range(implicit_wait):
             logs = self.driver.get_log("browser")
             for log in logs:
