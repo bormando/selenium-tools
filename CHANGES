@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+1.3.0
+----------
+- Added Local Storage interaction support (get/set methods)
+- Added tests for Local Storage
+- Updated package dependencies (selenium, pytest, webdriver-manager)
+- Update test web app URL
+- Fixed typo in assertion message of IndexedDB test
+
 1.2.1
 ----------
 - Added single iteration fix for IndexedDB get method when implicit_wait is 0
