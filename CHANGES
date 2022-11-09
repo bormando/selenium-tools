@@ -6,7 +6,7 @@ Change Log
 - Added Local Storage interaction support (get/set methods)
 - Added tests for Local Storage
 - Updated package dependencies (selenium, pytest, webdriver-manager)
-- Update test web app URL
+- Updated test web app URL
 - Fixed typo in assertion message of IndexedDB test
 
 1.2.1
