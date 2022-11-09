@@ -8,7 +8,7 @@ from seletools.actions import scroll_to_top, scroll_to_bottom
 class TestScroll:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, driver):
-        driver.get("https://bormando.github.io/pagescrolling/")
+        driver.get("https://bormando.github.io/seletools-web-app/")
 
     def test_scroll_to_top_with_obstacle(self, driver):
         button = driver.find_element(By.CSS_SELECTOR, "button")

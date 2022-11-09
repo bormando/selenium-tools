@@ -6,7 +6,7 @@ from seletools.indexeddb import IndexedDB
 class TestIndexedDB:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, driver):
-        driver.get("https://bormando.github.io/pagescrolling/")
+        driver.get("https://bormando.github.io/seletools-web-app/")
         self.idb = IndexedDB(driver, "mydb", 3)
 
     def test_get_data_from_indexeddb(self):
@@ -21,4 +21,4 @@ class TestIndexedDB:
     def test_add_data_into_indexeddb(self):
         self.idb.add_value("keyvaluepairs", "win", "war")
         value = self.idb.get_value("keyvaluepairs", "win")
-        assert value == "war", F"'foo' should contain value 'war', but contains '{value}' instead"
+        assert value == "war", F"'win' should contain value 'war', but contains '{value}' instead"
