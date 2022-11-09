@@ -3,7 +3,7 @@ from seletools import localstorage
 
 
 @pytest.mark.localstorage
-class TestIndexedDB:
+class TestLocalStorage:
     @pytest.fixture(scope="function", autouse=True)
     def setup(self, driver):
         self.driver = driver
