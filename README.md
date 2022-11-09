@@ -1,6 +1,14 @@
 # Selenium Tools
 
 ### About package
+Current package is called **Selenium Tools** for a reason - it contains useful helpers that are not included into Selenium natively. 
+
+Contributions are very welcome!
+
+### Installation
+> pip install seletools
+
+### Drag & Drop
 There is a known drag & drop bug that reproduces in frameworks that use [webdriver](https://github.com/w3c/webdriver) to send commands to browser. 
 This bug is a webdriver's issue and it's unknown when it's going to be fixed (or if it's going to be fixed at all). 
 Current solution uses JavaScript code to simulate drag & drop action on web page. 
@@ -10,12 +18,6 @@ You may find bug description and current workaround [here](https://medium.com/py
 
 Thanks to [druska](https://gist.github.com/druska) for his [native js drag and drop helper](https://gist.github.com/druska/624501b7209a74040175).
 
-Current package is called **Selenium Tools** for a reason - it will contain more features in future. Feel free to contribute.
-
-### Installation
-> pip install seletools
-
-### Drag & Drop
 ```
 from seletools.actions import drag_and_drop
 
@@ -44,7 +46,7 @@ scroll_to_bottom(driver, element1)
 ```
 
 ### Getting webdriver's wait values
-Selenium 4 in it's alpha versions already supports that feature, but stable (latest non-alpha version 3+) doesn't.
+Selenium 4 already supports that feature, but versions prior 4 (3.141.0-) doesn't.
 ```
 # get implicit wait value only
 from seletools.waits import get_implicit_wait
@@ -61,7 +63,8 @@ scripts = waits.scripts
 ```
 
 ### Interaction with IndexedDB
-It's possible to interact with IndexedDB database in browser via JavaScript. This interface helps get/update/insert data in existing databases and tables.
+It's possible to interact with IndexedDB database in browser via JavaScript. 
+This interface helps get/update/insert data in existing databases and tables.
 
 __Important: it's necessary to have logging enabled for your webdriver instance, since there's no other way for Selenium to get data from IndexedDB than gather it from the console. Here's how you can enable logging in your webdriver:__
 ```
@@ -84,5 +87,17 @@ idb.put_value("keyvaluepairs", "foo", "win")  # table name, key, new value
 idb.add_value("keyvaluepairs", "war", "pain")  # table name, new key, new value
 ```
 
+### Interaction with Local Storage
+Selenium doesn't support any Local Storage interactions natively, so usually actions like get/set were done with simple JavaScript snippets.
+
+```
+from seletools import localstorage
+
+# GET value
+value = localstorage.get_value(driver, "foo")  # webdriver instance, key in Local Storage
+# SET value
+localstorage.get_value(driver, "foo")  # webdriver instance, key in Local Storage, new value
+```
+
 ### Notes
-Drag & Drop action worked with CSS selectors only a while ago. Now it also supports XPath selectors.
+HTML5 Drag & Drop action worked with CSS selectors only a while ago. Now it also supports XPath selectors.
