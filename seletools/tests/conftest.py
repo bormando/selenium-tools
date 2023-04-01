@@ -12,7 +12,9 @@ def driver():
     options.add_argument("window-size=1024,700")
     dc = DesiredCapabilities.CHROME
     dc["goog:loggingPrefs"] = {"browser": "ALL"}
-    browser = webdriver.Chrome(ChromeDriverManager().install(), options=options, desired_capabilities=dc)
+    browser = webdriver.Chrome(
+        ChromeDriverManager().install(), options=options, desired_capabilities=dc
+    )
     browser.implicitly_wait(10)
     yield browser
     browser.quit()
