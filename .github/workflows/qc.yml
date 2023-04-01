@@ -2,6 +2,13 @@ name: Quality Control
 
 on:
   pull_request:
+    paths-ignore:
+      - '.github/**'
+      - '.gitignore'
+      - 'CHANGES'
+      - 'LICENSE'
+      - 'MANIFEST.in'
+      - 'README.md'
 
 jobs:
   lint:
@@ -19,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Chrome browser
-        run: apt-get install -y --no-install-recommends google-chrome-stable
+        run: sudo apt-get install -y --no-install-recommends google-chrome-stable
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
