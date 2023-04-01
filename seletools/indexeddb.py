@@ -26,7 +26,7 @@ class IndexedDB:
             self.db_version,
             table_name,
             key,
-            log_id
+            log_id,
         )
         implicit_wait = get_implicit_wait(self.driver)
         if not implicit_wait:
@@ -34,8 +34,10 @@ class IndexedDB:
         for i in range(implicit_wait):
             logs = self.driver.get_log("browser")
             for log in logs:
-                if F"Selenium Tools log #{log_id}: " in log["message"]:
-                    return log["message"].split(F"Selenium Tools log #{log_id}: ")[1][:-1]
+                if f"Selenium Tools log #{log_id}: " in log["message"]:
+                    return log["message"].split(f"Selenium Tools log #{log_id}: ")[1][
+                        :-1
+                    ]
                 else:
                     time.sleep(1)
         return None
@@ -58,7 +60,7 @@ class IndexedDB:
             self.db_version,
             table_name,
             key,
-            value
+            value,
         )
 
     def add_value(self, table_name, key, value):
@@ -79,5 +81,5 @@ class IndexedDB:
             self.db_version,
             table_name,
             key,
-            value
+            value,
         )
