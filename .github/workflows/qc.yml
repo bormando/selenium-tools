@@ -3,7 +3,7 @@ name: Quality Control
 on:
   pull_request:
     paths-ignore:
-      - '.github/**'
+      - '.github/workflows/publish'
       - '.gitignore'
       - 'CHANGES'
       - 'LICENSE'
