@@ -1,5 +1,7 @@
 # Selenium Tools
 
+![PyPI - Downloads](https://img.shields.io/pypi/dm/seletools)
+
 ### About package
 Current package is called **Selenium Tools** for a reason - it contains useful helpers that are not included into Selenium natively. 
 
@@ -10,7 +12,7 @@ Contributions are very welcome!
 
 ### Drag & Drop
 There is a known drag & drop bug that reproduces in frameworks that use [webdriver](https://github.com/w3c/webdriver) to send commands to browser. 
-This bug is a webdriver's issue and it's unknown when it's going to be fixed (or if it's going to be fixed at all). 
+This bug is a webdriver's issue, and it's unknown when it's going to be fixed (or if it's going to be fixed at all). 
 Current solution uses JavaScript code to simulate drag & drop action on web page. 
 It works in most of the cases when it doesn't work in [Selenium](https://github.com/SeleniumHQ/selenium).
 
