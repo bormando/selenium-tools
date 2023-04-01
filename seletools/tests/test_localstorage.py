@@ -11,9 +11,13 @@ class TestLocalStorage:
 
     def test_get_data_from_localstorage(self):
         value = localstorage.get_value(self.driver, "foo")
-        assert value == "bar", F"'foo' should contain value 'bar', but contains '{value}' instead"
+        assert (
+            value == "bar"
+        ), f"'foo' should contain value 'bar', but contains '{value}' instead"
 
     def test_set_data_in_localstorage(self):
         localstorage.set_value(self.driver, "win", "war")
         value = localstorage.get_value(self.driver, "win")
-        assert value == "war", F"'win' should contain value 'war', but contains '{value}' instead"
+        assert (
+            value == "war"
+        ), f"'win' should contain value 'war', but contains '{value}' instead"

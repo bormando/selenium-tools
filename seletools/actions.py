@@ -21,7 +21,7 @@ def scroll_to_top(driver, element1, element2=None):
                 )
             """,
             element1,
-            element2
+            element2,
         )
     else:
         driver.execute_script("arguments[0].scrollIntoView(true)", element1)

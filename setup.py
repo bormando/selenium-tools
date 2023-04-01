@@ -22,10 +22,8 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     packages=[
-        'seletools',
+        "seletools",
     ],
-    package_data={
-        'seletools': ['drag_and_drop.js']
-    },
-    python_requires='>=3.6',
+    package_data={"seletools": ["drag_and_drop.js"]},
+    python_requires=">=3.6",
 )
