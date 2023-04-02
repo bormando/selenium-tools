@@ -28,3 +28,10 @@ class TestIndexedDB:
         assert (
             value == "war"
         ), f"'win' should contain value 'war', but contains '{value}' instead"
+
+    def test_remove_data_from_indexeddb(self):
+        self.idb.remove_item("keyvaluepairs", "foo")
+        value = self.idb.get_value("keyvaluepairs", "foo")
+        assert (
+            value == "undefined"
+        ), f"'foo' should return undefined, but contains '{value}' instead"
