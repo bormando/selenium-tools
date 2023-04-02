@@ -1,6 +1,15 @@
 Change Log
 ==========
 
+1.4.0
+----------
+- Added remove item methods for IndexedDB & Local Storage
+- Added tests for remove item methods
+- Added monthly download stats
+- Added "black" as a code formatter
+- Updated package dependencies (selenium, pytest)
+- Updated GitHub Actions workflows
+
 1.3.0
 ----------
 - Added Local Storage interaction support (get/set methods)
