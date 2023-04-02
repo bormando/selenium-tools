@@ -87,6 +87,8 @@ value = idb.get_value("keyvaluepairs", "foo")  # table name, key in table
 idb.put_value("keyvaluepairs", "foo", "win")  # table name, key, new value
 # ADD value
 idb.add_value("keyvaluepairs", "war", "pain")  # table name, new key, new value
+# REMOVE item
+idb.remove_item("keyvaluepairs", "foo")  # table name, key in table
 ```
 
 ### Interaction with Local Storage
@@ -99,6 +101,8 @@ from seletools import localstorage
 value = localstorage.get_value(driver, "foo")  # webdriver instance, key in Local Storage
 # SET value
 localstorage.get_value(driver, "foo")  # webdriver instance, key in Local Storage, new value
+# REMOVE item
+localstorage.remove_item(driver, "foo")  # webdriver instance, key in Local Storage
 ```
 
 ### Notes
