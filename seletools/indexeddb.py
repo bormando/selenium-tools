@@ -83,3 +83,23 @@ class IndexedDB:
             key,
             value,
         )
+
+    def remove_item(self, table_name, key):
+        self.driver.execute_script(
+            """
+                var [ dbName, dbVersion, tableName, searchKey ] = [ arguments[0], arguments[1], arguments[2], arguments[3] ];
+                var request = window.indexedDB.open(dbName, dbVersion);
+                request.onsuccess = function(event) {
+                    var db = event.target.result;
+                    var objectStore = db.transaction(tableName, 'readwrite').objectStore(tableName);
+                    var requestUpdate = objectStore.delete(searchKey);
+                    requestUpdate.onsuccess = function(event) {
+                        db.commit;
+                    };
+                };
+            """,
+            self.db_name,
+            self.db_version,
+            table_name,
+            key,
+        )
