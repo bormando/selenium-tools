@@ -21,3 +21,8 @@ class TestLocalStorage:
         assert (
             value == "war"
         ), f"'win' should contain value 'war', but contains '{value}' instead"
+
+    def test_remove_data_from_localstorage(self):
+        localstorage.remove_item(self.driver, "foo")
+        value = localstorage.get_value(self.driver, "foo")
+        assert value is None, f"'foo' should return null, but returns '{value}' instead"
