@@ -8,7 +8,7 @@ with open("CHANGES", "r", encoding="utf-8") as ch:
 
 setuptools.setup(
     name="seletools",
-    version="1.4.0",
+    version="1.5.0",
     author="Dmitrii Bormotov",
     author_email="squier7@gmail.com",
     description="Helpful tools for Selenium on Python",
@@ -25,5 +25,5 @@ setuptools.setup(
         "seletools",
     ],
     package_data={"seletools": ["drag_and_drop.js"]},
-    python_requires=">=3.6",
+    python_requires=">=3.8",
 )

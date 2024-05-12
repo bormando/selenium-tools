@@ -1,6 +1,14 @@
 Change Log
 ==========
 
+1.5.0
+----------
+- Added Quality Control workflow status badge to README
+- Updated Python version to 3.12.3 in GitHub Actions workflows
+- Updated package dependencies and minimum Python version
+- Updated IndexedDB setup in README
+- Updated license copyright year
+
 1.4.0
 ----------
 - Added remove item methods for IndexedDB & Local Storage

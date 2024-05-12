@@ -1,6 +1,7 @@
 # Selenium Tools
 
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/seletools)
+![Quality Control](https://github.com/bormando/selenium-tools/actions/workflows/qc.yml/badge.svg)
 
 ### About package
 Current package is called **Selenium Tools** for a reason - it contains useful helpers that are not included into Selenium natively. 
@@ -68,12 +69,24 @@ scripts = waits.scripts
 It's possible to interact with IndexedDB database in browser via JavaScript. 
 This interface helps get/update/insert data in existing databases and tables.
 
-__Important: it's necessary to have logging enabled for your webdriver instance, since there's no other way for Selenium to get data from IndexedDB than gather it from the console. Here's how you can enable logging in your webdriver:__
+> [!WARNING]
+> It's necessary to have logging enabled for your webdriver instance, since there's no other way for Selenium to get data from IndexedDB than gather it from the console. The way to enable logs differs between versions of Selenium.
+
+#### Setup - Selenium 3
 ```
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
+dc = DesiredCapabilities.CHROME
 dc["goog:loggingPrefs"] = {"browser": "ALL"}
 driver = webdriver.Chrome(desired_capabilities=dc)
+```
+
+#### Setup - Selenium 4
+```
+from selenium import webdriver
+
+options = webdriver.ChromeOptions()
+options.set_capability("goog:loggingPrefs", {"browser": "ALL"})
 ```
 
 Example:
