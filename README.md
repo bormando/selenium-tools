@@ -76,6 +76,7 @@ This interface helps get/update/insert data in existing databases and tables.
 ```
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
+dc = DesiredCapabilities.CHROME
 dc["goog:loggingPrefs"] = {"browser": "ALL"}
 driver = webdriver.Chrome(desired_capabilities=dc)
 ```
